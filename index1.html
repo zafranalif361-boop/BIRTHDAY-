@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kak Najihah 🎉</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  padding: 28px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 360px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+  animation: fadeIn 2s ease;
+}
+
+/* Photo */
+.photo-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ff9a9e);
+  animation: glow 3s infinite;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: zoomIn 2s ease;
+}
+
+.name {
+  margin-top: 6px;
+  color: #ff4081;
+  font-weight: 600;
+  animation: fadeUp 2s ease;
+}
+
+h1 {
+  color: #ff4081;
+  animation: bounce 2s infinite;
+}
+
+p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Button */
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4081;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.85;
+  animation: fall linear infinite;
+}
+
+/* Animations */
+@keyframes fall {
+  from {transform: translateY(-10vh) rotate(0deg);}
+  to {transform: translateY(110vh) rotate(360deg);}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-60%) scale(0.8);}
+  to {opacity: 1; transform: translateY(-50%) scale(1);}
+}
+
+@keyframes bounce {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ff9a9e; }
+  50% { box-shadow: 0 0 25px #fad0c4; }
+  100% { box-shadow: 0 0 10px #ff9a9e; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+  <div class="photo-wrapper">
+    <img src="kak-najihah.jpg" alt="Kak Najihah" class="photo">
+  </div>
+  <h2 class="name">Kak Najihah 🤍</h2>
+
+  <h1>🎉 Happy Birthday 🥳</h1>
+
+  <p>
+    Dengan penuh rasa syukur, saya doakan semoga Kak Najihah
+    sentiasa berada dalam lindungan Allah 🤍  
+    <br><br>
+    <b>
+    اللَّهُمَّ بَارِكْ لَهَا فِي عُمْرِهَا،  
+    وَوَسِّعْ لَهَا فِي رِزْقِهَا،  
+    وَيَسِّرْ لَهَا أُمُورَهَا،  
+    وَارْزُقْهَا السَّعَادَةَ فِي الدُّنْيَا وَالْآخِرَةِ
+    </b>
+    <br><br>
+    Semoga sentiasa dimurahkan rezeki, dipanjangkan umur,
+    dipermudahkan urusan jodoh dan sentiasa bahagia ✨  
+    <br><br>
+    Terima kasih kerana sentiasa menjadi kakak  
+    dan supporter saya 😉
+  </p>
+
+  <button onclick="document.getElementById('bgMusic').play()">
+    Play Music 🎵
+  </button>
+
+</div>
+
+<script>
+/* Confetti generator */
+for (let i = 0; i < 70; i++) {
+  let c = document.createElement("div");
+  c.className = "confetti";
+  c.style.left = Math.random() * 100 + "vw";
+  c.style.animationDuration = (3 + Math.random() * 5) + "s";
+  c.style.backgroundColor =
+    "hsl(" + Math.random() * 360 + ",100%,50%)";
+  document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
